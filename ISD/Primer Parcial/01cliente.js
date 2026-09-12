@@ -22,3 +22,5 @@ async function main() {
     console.log("Tiempo de ida y vuelta(RTT): ${duracionMs} ms");
     console.log(JSON.stringify(cuerpo,null, 2));
 }
+
+main();
