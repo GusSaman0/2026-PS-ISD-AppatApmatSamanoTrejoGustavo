@@ -1,7 +1,7 @@
 const net = require('net');
 
 const HOST = process.env.host || '127.0.0.1';
-const PUERTO = proccess.env.PUERTO || 5000;
+const PUERTO = 5000;
 
 const socket = net.connect(PUERTO, HOST, () => {
     console.log(`[TCP] Conectando al HOST ${HOST}:${PUERTO}`);

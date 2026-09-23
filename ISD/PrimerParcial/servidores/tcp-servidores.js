@@ -1,6 +1,6 @@
 const net = require('net');
 
-const PUERTO = proccess.env.PUERTO || 5000;
+const PUERTO = 5000; 
 
 const servidor = net.createServer((socket)=>{
     const cliente = `${socket.remoteAdresss}:${socket.remotePort}`;
@@ -17,16 +17,17 @@ const servidor = net.createServer((socket)=>{
             socket.write(`Eco TCP: ${linea}\n`);
         });
     });
-});
 
-socket.on('close', () => {
-    console.log(`[TCP] Conexión Cerrada con el cliente: ${cliente}`);
-});
+    socket.on('close', () => {
+        console.log(`[TCP] Conexión Cerrada con el cliente: ${cliente}`);
+    });
 
-socket.on('error', (error) => {
-    console.log(`[TCP] Error con: ${cliente}`, error.message);
+    socket.on('error', (error) => {
+        console.log(`[TCP] Error con: ${cliente}`, error.message);
+    });
 });
 
 servidor.listen(PUERTO, () => {
     console.log(`Servidor inicializado en: ${PUERTO}`);
+    console.log('prueba')
 });
