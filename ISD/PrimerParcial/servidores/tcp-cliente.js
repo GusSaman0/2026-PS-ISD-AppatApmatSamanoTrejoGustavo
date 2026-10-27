@@ -21,3 +21,8 @@ socket.on('close', () => {
 socket.on('error', (error) => {
     console.log(`[TCP] No se pudo conectar`, error.message);
 });
+
+servidor.listen(PUERTO, () => {
+    console.log(`Servidor inicializado en: ${PUERTO}`);
+    console.log('Prueba');
+});

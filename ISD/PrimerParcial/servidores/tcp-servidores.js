@@ -26,8 +26,3 @@ const servidor = net.createServer((socket)=>{
         console.log(`[TCP] Error con: ${cliente}`, error.message);
     });
 });
-
-servidor.listen(PUERTO, () => {
-    console.log(`Servidor inicializado en: ${PUERTO}`);
-    console.log('prueba')
-});
